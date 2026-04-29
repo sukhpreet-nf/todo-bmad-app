@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "skill": "bmad-document-project",
+  "mode": "initial_scan",
+  "scan_level": "deep",
+  "resume_mode": false,
+  "autonomous": false,
+  "created_at": "2026-04-29T23:45:00Z",
+  "last_updated": "2026-04-29T23:45:00Z",
+  "current_step": "complete",
+  "completed_steps": [
+    "classify_project",
+    "load_documentation_requirements",
+    "scan_repo",
+    "draft_index",
+    "draft_overview",
+    "draft_architecture",
+    "draft_api",
+    "draft_data_model",
+    "draft_backend",
+    "draft_frontend",
+    "draft_development",
+    "write_state_file"
+  ],
+  "total_steps": 12,
+  "project_classification": {
+    "type": "fullstack-monorepo",
+    "domain": "todo-management",
+    "primary_languages": ["typescript"],
+    "frameworks": ["express", "react", "vite", "tailwind"],
+    "persistence": ["sqlite-better-sqlite3"],
+    "deploy": ["docker-compose", "nginx"]
+  },
+  "cached_project_types": ["nodejs-express-api", "react-spa", "monorepo"],
+  "outputs": [
+    "docs/index.md",
+    "docs/project-overview.md",
+    "docs/architecture.md",
+    "docs/api.md",
+    "docs/data-model.md",
+    "docs/backend.md",
+    "docs/frontend.md",
+    "docs/development.md"
+  ],
+  "notes": "Generated manually because Python 3.9 on this host is below the 3.11 required by _bmad/scripts/resolve_customization.py; followed the SKILL.md fallback merge rules. Re-run after upgrading Python to use the native resolver."
+}

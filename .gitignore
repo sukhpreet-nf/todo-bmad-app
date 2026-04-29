@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Build artifacts
+dist/
+*/dist/
+build/
+*/build/
+
+# SQLite data
+*.db
+data/
+
+# Environment files
+.env
+*/.env
+
+# Coverage reports
+coverage/
+*/coverage/
+*.lcov
+
+# Playwright
+playwright-report/
+test-results/
+*/playwright-report/
+*/test-results/
+
+# OS
+.DS_Store
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+
+# TypeScript
+*.tsbuildinfo

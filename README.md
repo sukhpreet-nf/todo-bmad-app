@@ -133,3 +133,7 @@ todo-bmad-app/
 | Variable | Default | Description |
 |----------|---------|-------------|
 | VITE_API_URL | /api | Backend API base URL |
+
+
+<img width="649" height="528" alt="image" src="https://github.com/user-attachments/assets/9cdc2a5a-19d4-4822-b92a-87ca69bb4690" />
+

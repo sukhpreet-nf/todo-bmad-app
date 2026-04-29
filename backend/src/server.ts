@@ -1,12 +1,21 @@
 import express from 'express';
 import cors from 'cors';
+import rateLimit from 'express-rate-limit';
 import todosRouter from './todos';
 
 const app = express();
 const PORT = parseInt(process.env.PORT || '3001', 10);
 
-app.use(cors({ origin: process.env.CORS_ORIGIN || '*' }));
+const allowedOrigin = process.env.CORS_ORIGIN;
+app.use(cors({ origin: allowedOrigin && allowedOrigin !== '*' ? allowedOrigin : false }));
 app.use(express.json());
+
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 300,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
 
 // Health check
 app.get('/healthz', (_req, res) => {
@@ -14,7 +23,7 @@ app.get('/healthz', (_req, res) => {
 });
 
 // API routes
-app.use('/api/todos', todosRouter);
+app.use('/api/todos', apiLimiter, todosRouter);
 
 // 404 handler
 app.use((_req, res) => {
